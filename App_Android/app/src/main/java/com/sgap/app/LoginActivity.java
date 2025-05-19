@@ -2,6 +2,7 @@ package com.sgap.app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -45,13 +46,24 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
                 return;
             }
+            // Validación básica de campos
+            if (TextUtils.isEmpty(correo)) {
+                etCorreo.setError("Introduce tu correo");
+                return;
+            }
 
-            // Validación temporal con usuario fijo
-            if (correo.equals("admin@sgap.com") && contrasena.equals("1234")) {
-                // Login correcto: ir a HomeActivity
+            if (TextUtils.isEmpty(contrasena)) {
+                etContrasena.setError("Introduce tu contraseña");
+                return;
+            }
+
+            // Simulación de login correcto (más adelante se conectará con API real)
+            if (correo.equals("admin@sgap.com") && contrasena.equals("admin123")) {
+                Toast.makeText(LoginActivity.this, "Login correcto", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
+                // Aquí iría la redirección a otra pantalla (dashboard, etc.)
             } else {
                 Toast.makeText(LoginActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
             }

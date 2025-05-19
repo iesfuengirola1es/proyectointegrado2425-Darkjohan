@@ -1,26 +1,31 @@
 package com.sgap.app;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * Esta actividad representa la pantalla principal del usuario después de iniciar sesión.
+ * Aquí se pueden agregar accesos a distintas funcionalidades como tareas, asistencias, etc.
+ */
 public class HomeActivity extends AppCompatActivity {
+
+    Button btnVerTareas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
 
-        // Aplicar márgenes seguros (evita que el contenido se superponga con la barra de estado)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.homeLayout), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        // Referencia al botón "Ver tareas"
+        btnVerTareas = findViewById(R.id.btnVerTareas);
+
+        // Ejemplo de acción: mostrar mensaje temporal (toast)
+        btnVerTareas.setOnClickListener(view ->
+                Toast.makeText(HomeActivity.this, "Funcionalidad en desarrollo...", Toast.LENGTH_SHORT).show()
+        );
     }
 }
+
