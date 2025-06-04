@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
-                // Aquí iría la redirección a otra pantalla (dashboard, etc.)
+                // Aquí va la redirección a otra pantalla (dashboard, etc.)
             } else {
                 Toast.makeText(LoginActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
             }
