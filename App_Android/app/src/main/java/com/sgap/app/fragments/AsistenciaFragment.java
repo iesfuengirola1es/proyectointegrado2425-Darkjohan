@@ -11,21 +11,22 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sgap.app.adapters.AsistenciaAdapter;
 import com.sgap.app.R;
-import com.sgap.app.classes.Falta;
+import com.sgap.app.classes.Asistencia;
 
 import java.util.ArrayList;
 import java.util.List;
 
 // Fragmento que muestra una lista de faltas simuladas en un RecyclerView
-public class FaltasFragment extends Fragment {
+public class AsistenciaFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private com.sgap.app.FaltaAdapter adapter;
-    private List<Falta> listaFaltas;
+    private AsistenciaAdapter adapter;
+    private List<Asistencia> listaAsistencias;
 
     // Constructor vacío obligatorio
-    public FaltasFragment() {}
+    public AsistenciaFragment() {}
 
     @Nullable
     @Override
@@ -34,20 +35,20 @@ public class FaltasFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         // Infla el layout del fragmento
-        View view = inflater.inflate(R.layout.fragment_faltas, container, false);
+        View view = inflater.inflate(R.layout.fragment_asistencias, container, false);
 
         // Inicializa el RecyclerView
-        recyclerView = view.findViewById(R.id.recyclerFaltas);
+        recyclerView = view.findViewById(R.id.recyclerAsistencia);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // Datos simulados de faltas
-        listaFaltas = new ArrayList<>();
-        listaFaltas.add(new Falta("17/06/2025", "Matemáticas", "Justificada"));
-        listaFaltas.add(new Falta("18/06/2025", "Lengua", "Sin justificar"));
-        listaFaltas.add(new Falta("19/06/2025", "Inglés", "Justificada"));
+        listaAsistencias = new ArrayList<>();
+        listaAsistencias.add(new Asistencia("17/06/2025", "Justificada"));
+        listaAsistencias.add(new Asistencia("18/06/2025", "Sin justificar"));
+        listaAsistencias.add(new Asistencia("19/06/2025", "Justificada"));
 
         // Enlazamos el adapter
-        adapter = new com.sgap.app.FaltaAdapter(listaFaltas);
+        adapter = new AsistenciaAdapter(listaAsistencias);
         recyclerView.setAdapter(adapter);
 
         return view;

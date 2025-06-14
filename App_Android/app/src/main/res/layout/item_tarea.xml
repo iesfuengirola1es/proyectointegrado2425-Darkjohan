@@ -12,12 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Asignatura -->
+        <!-- Estado -->
         <TextView
-            android:id="@+id/tvAsignatura"
+            android:id="@+id/tvEstado"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:text="Asignatura"
+            android:text="Estado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

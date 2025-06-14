@@ -35,7 +35,7 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
     public void onBindViewHolder(@NonNull TareaViewHolder holder, int position) {
         // Rellena los datos de cada ítem
         Tarea tarea = listaTareas.get(position);
-        holder.tvAsignatura.setText(tarea.getAsignatura());
+        holder.tvEstado.setText(tarea.getEstado());
         holder.tvDescripcion.setText(tarea.getDescripcion());
         holder.tvFecha.setText("Entrega: " + tarea.getFechaEntrega());
     }
@@ -47,11 +47,11 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
 
     // Clase interna que representa la vista de cada ítem
     public static class TareaViewHolder extends RecyclerView.ViewHolder {
-        TextView tvAsignatura, tvDescripcion, tvFecha;
+        TextView tvEstado, tvDescripcion, tvFecha;
 
         public TareaViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvAsignatura = itemView.findViewById(R.id.tvAsignatura);
+            tvEstado = itemView.findViewById(R.id.tvEstado);
             tvDescripcion = itemView.findViewById(R.id.tvDescripcion);
             tvFecha = itemView.findViewById(R.id.tvFechaEntrega);
         }

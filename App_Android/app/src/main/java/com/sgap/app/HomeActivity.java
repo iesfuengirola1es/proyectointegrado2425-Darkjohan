@@ -11,8 +11,9 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
-import com.sgap.app.fragments.FaltasFragment;
+import com.sgap.app.fragments.AsistenciaFragment;
 import com.sgap.app.fragments.HorarioFragment;
+import com.sgap.app.fragments.PerfilFragment;
 import com.sgap.app.fragments.TareasFragment;
 import com.sgap.app.fragments.TutoriasFragment;
 
@@ -65,12 +66,15 @@ public class HomeActivity extends AppCompatActivity {
         if (id == R.id.nav_tareas) {
             fragment = new TareasFragment();
         } else if (id == R.id.nav_faltas) {
-            fragment = new FaltasFragment();
+            fragment = new AsistenciaFragment();
         } else if (id == R.id.nav_horario) {
             fragment = new HorarioFragment();
         } else if (id == R.id.nav_tutorias) {
             fragment = new TutoriasFragment();
-        } else if (id == R.id.nav_cerrar_sesion) {
+        }else if (id == R.id.nav_perfil) {
+            loadFragment(new PerfilFragment());
+        }
+        else if (id == R.id.nav_cerrar_sesion) {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
             return;

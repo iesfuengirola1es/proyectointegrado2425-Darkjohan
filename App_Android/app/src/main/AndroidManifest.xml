@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SGAP"
         tools:targetApi="31">
         <activity
+            android:name=".fragments.PerfilFragment"
+            android:exported="false" />
+        <activity
             android:name=".adapters.TareaAdapter"
             android:exported="false" />
         <activity
@@ -22,7 +25,7 @@
             android:name=".fragments.HorarioFragment"
             android:exported="false" />
         <activity
-            android:name=".fragments.FaltasFragment"
+            android:name=".fragments.AsistenciaFragment"
             android:exported="false" />
         <activity
             android:name=".fragments.TareasFragment"

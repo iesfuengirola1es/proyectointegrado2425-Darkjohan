@@ -1,4 +1,4 @@
-package com.sgap.app;
+package com.sgap.app.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,48 +8,48 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sgap.app.classes.Falta;
+import com.sgap.app.R;
+import com.sgap.app.classes.Asistencia;
 
 import java.util.List;
 
 // Adapter para mostrar faltas en un RecyclerView
-public class FaltaAdapter extends RecyclerView.Adapter<FaltaAdapter.FaltaViewHolder> {
+public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.FaltaViewHolder> {
 
-    private List<Falta> listaFaltas;
+    private List<Asistencia> listaAsistencias;
 
-    public FaltaAdapter(List<Falta> listaFaltas) {
-        this.listaFaltas = listaFaltas;
+    public AsistenciaAdapter(List<Asistencia> listaAsistencias) {
+        this.listaAsistencias = listaAsistencias;
     }
 
     @NonNull
     @Override
     public FaltaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View vista = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_falta, parent, false);
+                .inflate(R.layout.item_asistencia, parent, false);
         return new FaltaViewHolder(vista);
     }
 
     @Override
     public void onBindViewHolder(@NonNull FaltaViewHolder holder, int position) {
-        Falta falta = listaFaltas.get(position);
-        holder.tvFecha.setText(falta.getFecha());
-        holder.tvAsignatura.setText(falta.getAsignatura());
-        holder.tvEstado.setText("Estado: " + falta.getEstado());
+        Asistencia asistencia = listaAsistencias.get(position);
+        holder.tvFecha.setText(asistencia.getFecha());
+        holder.tvEstado.setText("Estado: " + asistencia.getEstado());
     }
 
     @Override
     public int getItemCount() {
-        return listaFaltas.size();
+        return listaAsistencias.size();
     }
 
     // Clase ViewHolder interna
     public static class FaltaViewHolder extends RecyclerView.ViewHolder {
-        TextView tvFecha, tvAsignatura, tvEstado;
+        TextView tvFecha, tvEstado;
 
         public FaltaViewHolder(@NonNull View itemView) {
             super(itemView);
             tvFecha = itemView.findViewById(R.id.tvFecha);
-            tvAsignatura = itemView.findViewById(R.id.tvAsignatura);
+
             tvEstado = itemView.findViewById(R.id.tvEstado);
         }
     }

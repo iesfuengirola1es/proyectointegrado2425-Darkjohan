@@ -33,7 +33,7 @@ public class TutoriaAdapter extends RecyclerView.Adapter<TutoriaAdapter.TutoriaV
     @Override
     public void onBindViewHolder(@NonNull TutoriaViewHolder holder, int position) {
         Tutoria t = listaTutorias.get(position);
-        holder.tvAsignatura.setText(t.getAsignatura());
+        holder.tvMotivo.setText(t.getMotivo());
         holder.tvFechaHora.setText(t.getFecha() + " - " + t.getHora());
         holder.tvEstado.setText("Estado: " + t.getEstado());
     }
@@ -44,11 +44,11 @@ public class TutoriaAdapter extends RecyclerView.Adapter<TutoriaAdapter.TutoriaV
     }
 
     public static class TutoriaViewHolder extends RecyclerView.ViewHolder {
-        TextView tvAsignatura, tvFechaHora, tvEstado;
+        TextView tvMotivo, tvFechaHora, tvEstado;
 
         public TutoriaViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvAsignatura = itemView.findViewById(R.id.tvAsignaturaTutoria);
+            tvMotivo = itemView.findViewById(R.id.tvMotivo);
             tvFechaHora = itemView.findViewById(R.id.tvFechaHora);
             tvEstado = itemView.findViewById(R.id.tvEstadoTutoria);
         }

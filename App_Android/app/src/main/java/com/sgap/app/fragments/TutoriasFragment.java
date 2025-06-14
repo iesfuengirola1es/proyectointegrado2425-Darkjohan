@@ -42,8 +42,8 @@ public class TutoriasFragment extends Fragment {
 
         // Lista simulada de tutorías
         listaTutorias = new ArrayList<>();
-        listaTutorias.add(new Tutoria("Matemáticas", "17/06/2025", "10:30", "Pendiente"));
-        listaTutorias.add(new Tutoria("Lengua", "20/06/2025", "09:00", "Aceptada"));
+        listaTutorias.add(new Tutoria("Matemáticas exámen el lunes", "17/06/2025", "10:30", "Pendiente"));
+        listaTutorias.add(new Tutoria("Lengua trabajo final", "20/06/2025", "09:00", "Aceptada"));
 
         adapter = new TutoriaAdapter(listaTutorias);
         recyclerView.setAdapter(adapter);
