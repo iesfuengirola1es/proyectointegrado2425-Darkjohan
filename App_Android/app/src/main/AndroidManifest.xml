@@ -13,6 +13,18 @@
         android:theme="@style/Theme.SGAP"
         tools:targetApi="31">
         <activity
+            android:name=".TutoriasFragment"
+            android:exported="false" />
+        <activity
+            android:name=".HorarioFragment"
+            android:exported="false" />
+        <activity
+            android:name=".FaltasFragment"
+            android:exported="false" />
+        <activity
+            android:name=".TareasFragment"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
