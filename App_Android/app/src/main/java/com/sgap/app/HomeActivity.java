@@ -11,6 +11,10 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.sgap.app.fragments.FaltasFragment;
+import com.sgap.app.fragments.HorarioFragment;
+import com.sgap.app.fragments.TareasFragment;
+import com.sgap.app.fragments.TutoriasFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
